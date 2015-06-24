@@ -1,6 +1,6 @@
 {
   "name": "ets",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "It extracts all strings to translate and saves them in a file.",
   "keywords": [
     "translate",
@@ -22,11 +22,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Michele Belluco <michele.belluco@insideabit.com>",
+  "author": "Michele Belluco <michele@belluco.info>",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://raw.github.com/insideabit/extract-translate-string/master/LICENSE"
+      "url": "https://raw.github.com/vash15/extract-translate-string/master/LICENSE"
     }
   ],
   "dependencies": {

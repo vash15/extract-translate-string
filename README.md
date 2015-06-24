@@ -72,7 +72,13 @@ output file type
 - json
 - pot (coming soon)
 
-	
+### convert
+
+This utiliy convert a PO file to JSON.
+
+```
+$ ets convert -f ./locales/fr/default-fr.po -o ./locales/fr/default.json
+```
 
 
 ## License
