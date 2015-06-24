@@ -1,0 +1,12 @@
+node_modules/
+test/
+components/
+bowe_components/
+css/
+img/
+video/
+.json
+.css
+.xml
+bundle.js
+bundle-min.js

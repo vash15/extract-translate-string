@@ -1,0 +1,43 @@
+{
+  "name": "ets",
+  "version": "0.0.3",
+  "description": "It extracts all strings to translate and saves them in a file.",
+  "keywords": [
+    "translate",
+    "extract",
+    "string",
+    "tool"
+  ],
+  "main": "index.js",
+  "bin": {
+    "ets": "./bin/ets"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/insideabit/extract-translate-string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/insideabit/extract-translate-string/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michele Belluco <michele.belluco@insideabit.com>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/insideabit/extract-translate-string/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "async": "~0.2.10",
+    "colors": "~0.6.2",
+    "commander": "~2.1.0",
+    "fs-extended": "~0.2.0",
+    "pofile": "^0.2.12",
+    "progress": "~1.1.3",
+    "promptly": "~0.2.0",
+    "underscore": "~1.5.2",
+    "underscore.string": "~2.3.3"
+  }
+}

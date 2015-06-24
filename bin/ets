@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+
+
+var program = require('commander');
+var colors = require('colors');
+var packageJson = require('../package.json');
+var ets = require('../index');
+
+
+// Color theme
+colors.setTheme({
+	silly: 'rainbow',
+	input: 'grey',
+	verbose: 'cyan',
+	prompt: 'grey',
+	info: 'green',
+	data: 'grey',
+	help: 'grey',
+	warn: 'yellow',
+	debug: 'blue',
+	error: 'red',
+	default: 'cyan'
+});
+
+// Utils
+function split(str){
+	return str.split(",");
+}
+
+
+console.log( "Watch files for: translate(...), t(...), fkt(...) __(...) __(... %s, x) ".cyan );
+console.log( "Note: fkt() (FaKe Translate) was created to translate constants. ".grey );
+console.log( "      Ex. var ERROR_CODE = fkt('PAGE_NOT_FOUND'); ".grey );
+
+// Program
+program.version(packageJson.version);
+
+
+// Start extract
+program
+	.command('extract')
+	.description('Extract strings for translation')
+	.option('-d, --dir <directory, directory, ...>', 'Directory to watch', split )
+	.option('-o, --out <file>', 'File name output')
+	.action( ets.extract );
+
+
+// Init ignore file
+program
+	.command('ignore')
+	.description('Generate file .etsingore')
+	.option('-d, --dir <directory>', 'Directory to save .etsignore file')
+	.action( ets.initIgnore );
+
+
+
+// Any command
+program
+   .command('*')
+   // .description('Any commands')
+   .action(function(){
+     	console.log("Command doesn't exist.");
+     	program.help();
+   });
+
+
+program.parse(process.argv);
+
+if (!program.args.length) program.help();
+
