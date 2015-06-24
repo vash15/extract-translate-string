@@ -52,6 +52,14 @@ program
 	.option('-d, --dir <directory>', 'Directory to save .etsignore file')
 	.action( ets.initIgnore );
 
+// File PO
+program
+	.command('convert')
+	.description('Convert file PO to JSON file')
+	.option('-f, --file <file>', 'File PO')
+	.option('-o, --out <file>', 'File json output')
+	.action( ets.poToJSON );
+
 
 
 // Any command

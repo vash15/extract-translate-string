@@ -74,12 +74,41 @@ ets.initIgnore = function initIgnore(options){
 // PO file
 
 ets.poToJSON = function poToJSON(options){
+	var filePO = options.file;
+	var fileOutput = options.out;
+	var translates = {};
+	if ( !fileOutput )
+		return new Error('File json for output does not setted.');
+	if ( !filePO || !fs.existsSync(filePO) )
+		return new Error('Input PO file does not setted.');
 
-};
 
-ets.JSONToPo = function JSONToPo(options){
+	// Control if output exists
+	if ( fs.existsSync(fileOutput) ){
+		try{
+			var txt = fs.readFileSync( fileOutput, {encoding: 'utf8'} );
+			translates = JSON.parse( txt );
+		}catch(e){
+			translates = {};
+		}
+	}
 
-	
+	PO.load(filePO, function (err, po) {
+	    if ( err )
+	    	return new Error("Error on read file po.");
+	    
+	    if ( po && po.items && po.items.length > 0 ){
+	    	_(po.items).each(function(item){
+	    		if ( item.msgid && item.msgstr && item.msgstr.length > 0 )
+	    			translates[ item.msgid ] = item.msgstr[0];
+	    	});
+	    }
+
+	    var txt = JSON.stringify(translates);
+		error = fs.writeFileSync(fileOutput, txt.replace(/(\\\\)/gm,"\\") );
+	    
+	});
+
 
 };
 
