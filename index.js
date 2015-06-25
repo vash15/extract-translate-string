@@ -371,10 +371,15 @@ ets.extract = function extract(options){
 					fileOutput += ".po";
 				
 				_(stringsList).each(function(transtale, stringForTranslate){
-					var item    = new PO.Item();
-					item.msgid  = stringForTranslate;
-					item.msgstr = [transtale];
-					poFile.items.push( item );
+
+					// Cerco se negli items ho già un msgid incluso
+					var item = _(poFile.items).findWhere({ msgid: stringForTranslate });
+					if ( !item ){
+						item = new PO.Item();
+						item.msgid  = stringForTranslate;
+						item.msgstr = [transtale];
+						poFile.items.push( item );
+					}
 				});
 
 
