@@ -1,6 +1,6 @@
 {
   "name": "ets",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "It extracts all strings to translate and saves them in a file.",
   "keywords": [
     "translate",

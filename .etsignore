@@ -1,7 +1,6 @@
 node_modules/
 test/
-components/
-bowe_components/
+bower_components/
 css/
 img/
 video/
