@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/insideabit/extract-translate-string.git"
+    "url": "https://github.com/vash15/extract-translate-string.git"
   },
   "bugs": {
-    "url": "https://github.com/insideabit/extract-translate-string/issues"
+    "url": "https://github.com/vash15/extract-translate-string/issues"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
